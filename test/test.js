@@ -35,9 +35,10 @@ const DurableSchema = new Schema({
         type: String,
         unique: true
     }
+}, {
+    durable: true
 });
 
-DurableSchema.durable = true;
 
 describe('Mongoose Vics', function() {
 
@@ -56,7 +57,6 @@ describe('Mongoose Vics', function() {
         globals.mongoVicks.loadPlugin(mongoose);
 
         var Durable = mongoose.model('Durable'+ crypto.randomBytes(8).toString('hex'), DurableSchema);
-        assert(DurableSchema.durable, 'We should have a durable object');
         assert(DurableSchema.options.safe, 'Should have safe params set');
         assert.equal(DurableSchema.options.safe.j, 1 );
         assert.equal(DurableSchema.options.safe.w, 0 );

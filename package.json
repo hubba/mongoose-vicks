@@ -1,6 +1,6 @@
 {
   "name": "mongoose-vicks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A module to force mongoose to use more durable commits.",
   "main": "index.js",
   "scripts": {

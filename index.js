@@ -55,7 +55,7 @@ Vicks.prototype.setDurabilityProfile = function(profileName) {
  * @param {Mongoose::Schema} schema The schema that you need to attach.
  */
 Vicks.prototype.mongoData = function(schema) {
-    if (typeof schema.durable !== 'undefined' && schema.durable) {
+    if ((typeof schema.durable !== 'undefined' && schema.durable) || (typeof schema.options.durable !== 'undefined' &&  schema.options.durable)) {
         schema.options.safe = this.mongoDurabilityProfiles[this.mongoSelectedProfile];
     }
 };
