@@ -1,13 +1,26 @@
 {
   "name": "mongoose-vicks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A module to force mongoose to use more durable commits.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test/*.js"
   },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/hubba/mongoose-vicks.git"
+  },
+  "keywords": [
+    "mongoose",
+    "vicks",
+    "durable"
+  ],
+  "bugs": {
+    "url": "https://github.com/hubba/mongoose-vicks/issues"
+  },
   "author": "jhaldenby@hubba.com",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "devDependencies": {
     "kerberos": "0.0.23",
     "mocha": "^3.2.0",
