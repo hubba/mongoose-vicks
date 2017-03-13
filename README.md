@@ -62,6 +62,25 @@ the options will automatically apply.
     DurableSchema.durable = true;
 ```
 
+This module will change the `writeConcern` in mongoose collections, please read:
+ https://docs.mongodb.com/manual/reference/write-concern/. 
+
+
+Write Concerns Values
+---------------------
+
++ 'majority' - If a data bearing node goes down for any reason, you'll lose the ability to perform writes for any operations using that write concern. (mlab)
++  1 - Requests acknowledgement that the write operation has propagated to the standalone mongod or the primary in a replica set. w: 1 is the default write concern for MongoDB.
++  0 - Please see https://docs.mongodb.com/manual/reference/write-concern/
+
+Journal
+-------
+
++ true - The requests acknowledgement that the mongod instances, as specified.
+
+  - From Notes: Changed in version (MongoDB) 3.2: With j: true, MongoDB returns only after the requested number of members, including the primary, have written to the journal. Previously j: true write concern in a replica set only requires the primary to write to the journal, regardless of the w: <value> write concern.
+ 
+
 Testing
 -------
 
